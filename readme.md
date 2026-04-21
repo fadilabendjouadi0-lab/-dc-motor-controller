@@ -2,21 +2,25 @@
 
 ## Description
 This project implements a bidirectional speed and direction 
-controller for a DC motor using an Arduino Uno, L293D motor 
-driver, and a joystick for user input.
+controller for a DC motor using an Arduino Uno, L293D H-Bridge 
+motor driver, and a joystick for user input.
 
 ## Components
 - Arduino Uno
-- L293D Motor Driver
-- DC Motor
 - Joystick Module
-- Power Supply
+- L293D H-Bridge Motor Driver
+- DC Motor
+- Battery
 
 ## How It Works
-- Joystick RIGHT → Motor spins Forward
-- Joystick LEFT → Motor spins in Reverse  
-- Joystick CENTER → Motor stops
-- Speed is controlled via PWM signal
+The motor speed is controlled via PWM signal sent to EN1.
+The direction is controlled via IN1 and IN2 signals.
+
+| Joystick Position | IN1 | IN2 | Motor |
+|---|---|---|---|
+| Right (value > 470) | HIGH | LOW | Forward |
+| Left (value < 470) | LOW | HIGH | Reverse |
+| Center | LOW | LOW | Stopped |
 
 ## Pin Configuration
 | Component | Arduino Pin |
@@ -26,7 +30,13 @@ driver, and a joystick for user input.
 | L293D EN1 (PWM) | Pin 10 |
 | Joystick X-axis | A0 |
 
+## Circuit Diagram
+![Circuit](circuit.jpg)
+
 ## Tools Used
+- Arduino IDE
+- Proteus (simulation)
+- Embedded C
 - Arduino IDE
 - Proteus (simulation)
 - Embedded C
