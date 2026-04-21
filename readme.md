@@ -31,7 +31,12 @@ The direction is controlled via IN1 and IN2 signals.
 | Joystick X-axis | A0 |
 
 ## Circuit Diagram
-![Circuit](circuit.jpg)
+
+### Real Circuit
+![Real Circuit](circuit_real.jpg)
+
+### Schematic (Fritzing)
+![Fritzing](circuit_fritzing.jpg)
 
 ## Tools Used
 - Arduino IDE
